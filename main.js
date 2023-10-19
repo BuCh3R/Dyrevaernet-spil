@@ -5,7 +5,7 @@ const tree = new Image;
 tree.src = 'img/tree.png';
 
 const background = new Image;
-background.src = 'img/background-img.png';
+background.src = 'img/background.png';
 
 let xPos = 10;
 let yPos = 10;
