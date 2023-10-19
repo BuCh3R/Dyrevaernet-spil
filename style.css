@@ -1,0 +1,7 @@
+canvas{
+    border: 1px solid black;
+}
+#gameDiv{
+    text-align: center;
+    width: 100%;
+}
