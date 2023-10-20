@@ -34,16 +34,16 @@ document.onkeyup = function(event) {
 }
 
 setInterval(function() {
-    if (keyDownW){
+    if (keyDownW && hero.yPos > 0) {
         hero.yPos -= 1;
     }
-    if (keyDownA){
+    if (keyDownA && hero.xPos > 0) {
         hero.xPos -= 1;
     }
-    if (keyDownS){
+    if (keyDownS && hero.yPos < canvas.width) {
         hero.yPos += 1;
     }
-    if (keyDownD){
+    if (keyDownD && hero.xPos < canvas.width) {
         hero.xPos += 1;
     }
 })
