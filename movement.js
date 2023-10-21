@@ -1,7 +1,7 @@
-let keyDownW
-let keyDownA
-let keyDownS
-let keyDownD
+let keyDownW;
+let keyDownA;
+let keyDownS;
+let keyDownD;
 
 document.onkeydown = function(event) {
     if (event.key == "w") {
