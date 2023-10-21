@@ -65,7 +65,6 @@ function changeImage(){
   }
 }
 
-
 let lastRender = 0;
 let counter = 0;
 function render(time){

@@ -1,6 +1,4 @@
-var dog = {xPos: 200, yPos: 200};
 let dogHitbox = hero.xPos>=dog.xPos && hero.xPos<=dog.xPos && hero.yPos>=dog.yPos && hero.yPos<=dog.yPos;
-console.log(dogHitbox);
 
 const attackMenu = new Image;
 attackMenu.src = "img/attackmenu.png";
@@ -13,7 +11,6 @@ attack2.src = "img/attack2.png";
 
 const attack3 = new Image;
 attack3.src = "img/attack3.png";
-
 
 function loadFightScene(){
     background.onload = () =>{
