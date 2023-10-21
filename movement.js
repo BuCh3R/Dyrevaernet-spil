@@ -40,10 +40,10 @@ setInterval(function() {
     if (keyDownA && hero.xPos > 0) {
         hero.xPos -= 1;
     }
-    if (keyDownS && hero.yPos < canvas.width) {
+    if (keyDownS && hero.yPos < canvas.width - char.width) {
         hero.yPos += 1;
     }
-    if (keyDownD && hero.xPos < canvas.width) {
+    if (keyDownD && hero.xPos < canvas.width - char.width) {
         hero.xPos += 1;
     }
 })
