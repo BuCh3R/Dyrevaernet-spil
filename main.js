@@ -1,25 +1,78 @@
 const char = new Image; 
 char.src = 'img/player.png';
 
-const tree = new Image;
-tree.src = 'img/tree.png';
+const treeImg = new Image;
+treeImg.src = 'img/tree.png';
 
 const background = new Image;
 background.src = 'img/background.png';
 
-let xPos = 10;
-let yPos = 10;
-let hero = {xPos: 200, yPos: 200};
+const playerRun1 = new Image;
+playerRun1.src = 'img/player-run/player-run-1.png';
+
+const playerRun2 = new Image;
+playerRun2.src = 'img/player-run/player-run-2.png';
+
+const playerRun3 = new Image;
+playerRun3.src = 'img/player-run/player-run-3.png';
+
+const playerRun4 = new Image;
+playerRun4.src = 'img/player-run/player-run-4.png';
+
+const playerRun5 = new Image;
+playerRun5.src = 'img/player-run/player-run-5.png';
+
+const playerRun6 = new Image;
+playerRun6.src = 'img/player-run/player-run-6.png';
+
+const playerRun7 = new Image;
+playerRun7.src = 'img/player-run/player-run-7.png';
+
+const playerRun8 = new Image;
+playerRun8.src = 'img/player-run/player-run-8.png';
+
+
+let hero = {xPos: 200, yPos: 200, width: 48, height: 48};
+let dog = {xPos: 100, yPos: 100, width: 50, height: 50};
+let tree = {xPos: 50, yPos: 200, width: 64, height: 128};
+let rock = {xPos: 100, yPos: 100, width: 50, height: 50};
+
+
 const canvas = document.getElementById("gameCanvas");
 const context = canvas.getContext("2d");
 
-  // character // char move controls //
-function update(){
-  // draw new character when moving //
-    canvas.width=canvas.width;
+var charArray = [playerRun1, playerRun2, playerRun3, playerRun4, playerRun5, playerRun6, playerRun7, playerRun8];
+let i = 0;
+
+function changeImage(){
+  if(i<8){
+    context.clearRect(0,0, context.canvas.width, context.canvas.height);
     context.drawImage(background, 0, 0, 800, 800);
-    context.drawImage(char, hero.xPos, hero.yPos, 48, 48);
-    context.drawImage(tree, 50, 200, 64, 128);
-    requestAnimationFrame(update)
+    context.drawImage(treeImg, tree.xPos, tree.yPos, tree.width, tree.height);
+    context.drawImage(charArray[i], hero.xPos, hero.yPos, hero.width, hero.height);
+    i++;
+  }else{
+    i=0;
+  }
 }
-update()
+
+
+let lastRender = 0;
+let counter = 0;
+function render(time){
+  if(time - lastRender<16){
+    requestAnimationFrame(render);
+    return;
+  }
+  lastRender = time;
+  counter++;
+  if(counter %2 && counter != 0){
+    changeImage();
+  }
+  if(counter >= 60){
+    counter=0;
+  }
+  requestAnimationFrame(render);
+}
+requestAnimationFrame(render);
+
