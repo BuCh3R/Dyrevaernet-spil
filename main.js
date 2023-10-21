@@ -28,11 +28,12 @@ function update(){
     canvas.width=canvas.width;
     context.drawImage(background, 0, 0, 800, 800);
     context.drawImage(char, hero.xPos, hero.yPos, 48, 48);
-    context.drawImage(tree, 50, 200, 64, 128);
-    context.drawImage(house, 400, 400, 48, 48);
-    context.drawImage(rock, 350, 200, 32, 32);
-    context.drawImage(rock, 30, 150, 32, 32);
-    context.drawImage(dog, 310, 200, 24, 24); 
+    context.drawImage(tree, 50, 300, 128, 256);
+    context.drawImage(house, 360, 80, 120, 120);
+    context.drawImage(rock, 720, 300, 96, 96);
+    context.drawImage(rock, 30, 150, 96, 96);
+    context.drawImage(dog, 600, 700, 60, 60); 
+    context.drawImage(dog, 200, 100, 60, 60);
     requestAnimationFrame(update)
 }
 update()
