@@ -10,6 +10,9 @@ charShadow.src = 'img/player-shadow.png';
 const treeImg = new Image;
 treeImg.src = 'img/tree.png';
 
+const treeShadow = new Image;
+treeShadow.src = 'img/tree-shadow.png';
+
 const background = new Image;
 background.src = 'img/background.png';
 
@@ -97,13 +100,12 @@ function changeImage(){
   }
   layer();
   if (i < charArray.length - 1) {
-    i++
+    i++;
   }
   else {
     i = 0;
   }
 }
-
 
 let lastRender = 0;
 let counter = 0;
