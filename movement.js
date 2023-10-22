@@ -1,7 +1,8 @@
-let keyDownW
-let keyDownA
-let keyDownS
-let keyDownD
+let keyDownW;
+let keyDownA;
+let keyDownS;
+let keyDownD;
+let reverse;
 
 document.onkeydown = function(event) {
     if (event.key == "w") {
@@ -9,12 +10,14 @@ document.onkeydown = function(event) {
     }
     if (event.key == "a") {
         keyDownA = true;
+        reverse = true;
     }
     if (event.key == "s") {
         keyDownS = true;
     }
     if (event.key == "d") {
         keyDownD = true;
+        reverse = false;
    }
 }
 
