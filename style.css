@@ -1,7 +1,16 @@
 canvas{
     border: 1px solid black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
 }
 #gameDiv{
-    text-align: center;
-    width: 100%;
+    position: relative;
+}
+#gameCanvas{
+    display: block;
+}
+#fightCanvas{
+    display: none;
 }

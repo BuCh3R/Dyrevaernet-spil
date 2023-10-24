@@ -39,7 +39,7 @@ playerRun8.src = 'img/player-run/player-run-8.png';
 
 
 let hero = {xPos: 200, yPos: 200, width: 48, height: 48};
-let dog = {xPos: 100, yPos: 100, width: 50, height: 50};
+let dog = {xPos: 200, yPos: 200, width: 50, height: 50};
 let tree = {xPos: 50, yPos: 200, width: 64, height: 128};
 let rock = {xPos: 100, yPos: 100, width: 50, height: 50};
 
