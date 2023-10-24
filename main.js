@@ -7,11 +7,29 @@ charR.src = 'img/player-r.png';
 const charShadow = new Image; 
 charShadow.src = 'img/player-shadow.png';
 
+const dogImg = new Image;
+dogImg.src = 'img/dog.png';
+
+const dogShadow = new Image;
+dogShadow.src = 'img/dog-shadow.png';
+
 const treeImg = new Image;
 treeImg.src = 'img/tree.png';
 
 const treeShadow = new Image;
 treeShadow.src = 'img/tree-shadow.png';
+
+const rockImg = new Image;
+rockImg.src = 'img/rock.png'; 
+
+const rockShadow = new Image;
+rockShadow.src = 'img/rock-shadow.png'; 
+
+const houseImg = new Image; 
+houseImg.src = 'img/house.png';
+
+const houseShadow = new Image; 
+houseShadow.src = 'img/house-shadow.png';
 
 const background = new Image;
 background.src = 'img/background.png';
@@ -64,10 +82,14 @@ playerRun7R.src = 'img/player-run/player-run-7-r.png';
 const playerRun8R = new Image;
 playerRun8R.src = 'img/player-run/player-run-8-r.png';
 
-let hero = {xPos: 200, yPos: 200, width: 48, height: 48};
-let dog = {xPos: 100, yPos: 100, width: 50, height: 50};
-let tree = {xPos: 50, yPos: 200, width: 64, height: 128};
-let rock = {xPos: 100, yPos: 100, width: 50, height: 50};
+let hero = {xPos: 376, yPos: 376, width: 48, height: 48};
+let dog = {xPos: 600, yPos: 700, width: 48, height: 48};
+let dog_2 = {xPos: 200, yPos: 100, width: 48, height: 48};
+let tree = {xPos: 50, yPos: 300, width: 64, height: 128};
+let tree_2 = {xPos: 600, yPos: 200, width: 64, height: 128};
+let rock = {xPos: 720, yPos: 450, width: 64, height: 64};
+let rock_2 = {xPos: 30, yPos: 150, width: 64, height: 64};
+let house = {xPos: 352, yPos: 150, width: 96, height: 96};
 
 const canvas = document.getElementById("gameCanvas");
 const context = canvas.getContext("2d");
@@ -78,9 +100,21 @@ let charArrayR = [playerRun1R, playerRun1R, playerRun2R, playerRun2R, playerRun3
 function changeImage(){
   context.clearRect(0,0, context.canvas.width, context.canvas.height);
   context.drawImage(background, 0, 0, 800, 800);
+  context.drawImage(houseShadow, house.xPos, house.yPos, house.width, house.height);
   context.drawImage(treeShadow, tree.xPos, tree.yPos, tree.width, tree.height);
+  context.drawImage(treeShadow, tree_2.xPos, tree_2.yPos, tree_2.width, tree_2.height);
+  context.drawImage(rockShadow, rock.xPos, rock.yPos, rock.width, rock.height);
+  context.drawImage(rockShadow, rock_2.xPos, rock_2.yPos, rock_2.width, rock_2.height);
+  context.drawImage(dogShadow, dog.xPos, dog.yPos, dog.width, dog.height);
+  context.drawImage(dogShadow, dog_2.xPos, dog_2.yPos, dog_2.width, dog_2.height);
   context.drawImage(charShadow, hero.xPos, hero.yPos, hero.width, hero.height);
+  context.drawImage(houseImg, house.xPos, house.yPos, house.width, house.height);
   context.drawImage(treeImg, tree.xPos, tree.yPos, tree.width, tree.height);
+  context.drawImage(treeImg, tree_2.xPos, tree_2.yPos, tree_2.width, tree_2.height);
+  context.drawImage(rockImg, rock.xPos, rock.yPos, rock.width, rock.height);
+  context.drawImage(rockImg, rock_2.xPos, rock_2.yPos, rock_2.width, rock_2.height);
+  context.drawImage(dogImg, dog.xPos, dog.yPos, dog.width, dog.height);
+  context.drawImage(dogImg, dog_2.xPos, dog_2.yPos, dog_2.width, dog_2.height);
   if ((keyDownA || keyDownD || keyDownS || keyDownW) && !(keyDownA === keyDownD && keyDownS === keyDownW)) {
     if (reverse) {
       context.drawImage(charArrayR[i], hero.xPos, hero.yPos, hero.width, hero.height);
