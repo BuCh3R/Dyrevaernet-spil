@@ -37,16 +37,33 @@ document.onkeyup = function(event) {
 }
 
 setInterval(function() {
-    if (keyDownW && hero.yPos > 0) {
+    if (keyDownW && heroHitbox.yPos > 0) {
         hero.yPos -= 1;
+        hitbox();
+        if (objectCollision(heroHitbox)) {
+            hero.yPos += 1;
+        }
     }
-    if (keyDownA && hero.xPos > 0) {
+    if (keyDownA && heroHitbox.xPos > 0) {
         hero.xPos -= 1;
+        hitbox();
+        if (objectCollision(heroHitbox)) {
+            hero.xPos += 1;
+        }
     }
-    if (keyDownS && hero.yPos < canvas.width - char.width) {
+    if (keyDownS && heroHitbox.yPos < canvas.width - heroHitbox.width) {
         hero.yPos += 1;
+        hitbox();
+        if (objectCollision(heroHitbox)) {
+            hero.yPos -= 1;
+        }
     }
-    if (keyDownD && hero.xPos < canvas.width - char.width) {
+    if (keyDownD && heroHitbox.xPos < canvas.width - heroHitbox.width) {
         hero.xPos += 1;
+        hitbox();
+        if (objectCollision(heroHitbox)) {
+            hero.xPos -= 1;
+        }
     }
+    hitbox();
 })

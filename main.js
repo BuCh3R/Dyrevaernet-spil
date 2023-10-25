@@ -115,6 +115,7 @@ function changeImage(){
   context.drawImage(rockImg, rock_2.xPos, rock_2.yPos, rock_2.width, rock_2.height);
   context.drawImage(dogImg, dog.xPos, dog.yPos, dog.width, dog.height);
   context.drawImage(dogImg, dog_2.xPos, dog_2.yPos, dog_2.width, dog_2.height);
+  hitbox();
   if ((keyDownA || keyDownD || keyDownS || keyDownW) && !(keyDownA === keyDownD && keyDownS === keyDownW)) {
     if (reverse) {
       context.drawImage(charArrayR[i], hero.xPos, hero.yPos, hero.width, hero.height);
