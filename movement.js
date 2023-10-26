@@ -51,7 +51,7 @@ setInterval(function() {
             hero.xPos += 1;
         }
     }
-    if (keyDownS && heroHitbox.yPos < canvas.width - heroHitbox.width) {
+    if (keyDownS && heroHitbox.yPos < canvas.width - heroHitbox.height) {
         hero.yPos += 1;
         hitbox();
         if (objectCollision(heroHitbox)) {

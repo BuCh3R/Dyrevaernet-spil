@@ -96,22 +96,23 @@ dogAngry8.src = 'img/fight/dog-fight-angry/dog-fight-angry-8.png';
 const fightCanvas = document.getElementById("fightCanvas");
 const fightContext = fightCanvas.getContext("2d");
 
+let random;
+
 //Draw fight scene elements
 function loadFightScene(){
-  grassBackground.onload = () =>{
-        fightCanvas.style = "display:block";
-        fightContext.drawImage(grassBackground, 0, 0, 800, 800);
-        fightContext.drawImage(playerRShadow, 10, 310, 240, 240);
-        fightContext.drawImage(dogRShadow, 500, 40, 240, 240);
-        fightContext.drawImage(playerR, 10, 310, 240, 240);
-        fightContext.fillStyle = "#212121";
-        fightContext.fillRect(0, 600, 800, 200);
-        fightContext.drawImage(attack1, 15, 610, 180, 180);
-        fightContext.drawImage(attack2, 210, 610, 180, 180);
-        fightContext.drawImage(attack3, 405, 610, 180, 180);
-        fightContext.drawImage(returnBtn, 600, 610, 180, 180);
-        fightContext.drawImage(dogR, 500, 40, 240, 240);
-    };
+  fightCanvas.style = "display:block";
+  random = Math.floor(Math.random()*3);
+  fightContext.drawImage(grassBackground, 0, 0, 800, 800);
+  fightContext.drawImage(playerRShadow, 10, 310, 240, 240);
+  fightContext.drawImage(dogRShadow, 500, 40, 240, 240);
+  fightContext.drawImage(playerR, 10, 310, 240, 240);
+  fightContext.fillStyle = "#1d1b22";
+  fightContext.fillRect(0, 600, 800, 200);
+  fightContext.drawImage(attack1, 15, 610, 180, 180);
+  fightContext.drawImage(attack2, 210, 610, 180, 180);
+  fightContext.drawImage(attack3, 405, 610, 180, 180);
+  fightContext.drawImage(returnBtn, 600, 610, 180, 180);
+  fightContext.drawImage(dogR, 500, 40, 240, 240);
 }
 
 //Create hitbox for menu buttons
@@ -142,9 +143,7 @@ fightCanvas.addEventListener('mousemove', function(event) {
     }
 });
 
-//Randomize winning attack 
-let random = Math.floor(Math.random()*3);
-console.log(random);
+//Randomize winning attack
 let attackWin;
 
 let dogLeash = [dogLeash1, dogLeash2, dogLeash3, dogLeash4, dogLeash5, dogLeash6, dogLeash7, dogLeash8];
@@ -159,7 +158,7 @@ function dogAnimtion(dogSprites, i){
   fightContext.drawImage(playerRShadow, 10, 310, 240, 240);
   fightContext.drawImage(dogRShadow, 500, 40, 240, 240);
   fightContext.drawImage(playerR, 10, 310, 240, 240);
-  fightContext.fillStyle = "#212121";
+  fightContext.fillStyle = "#1d1b22";
   fightContext.fillRect(0, 600, 800, 200);
   fightContext.drawImage(attack1, 15, 610, 180, 180);
   fightContext.drawImage(attack2, 210, 610, 180, 180);
