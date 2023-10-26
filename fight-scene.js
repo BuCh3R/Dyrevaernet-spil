@@ -1,5 +1,3 @@
-let dogHitbox = hero.xPos>=dog.xPos && hero.xPos<=dog.xPos && hero.yPos>=dog.yPos && hero.yPos<=dog.yPos;
-
 const attack1 = new Image;
 attack1.src = "img/player.png";
 
@@ -80,12 +78,8 @@ fightCanvas.addEventListener('click', function(event) {
   //Checks if user chose the correct attack
   if(random==attackWin){
     console.log("you've won!");
+    hasDog = true;
   }else{
     console.log("you've lost, try again!");
   }
 });
-
-//Loads fight scene canvas and its elements if player is on top of dog
-if(dogHitbox){
-    loadFightScene();
-}

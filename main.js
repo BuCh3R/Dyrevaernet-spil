@@ -4,6 +4,12 @@ char.src = 'img/player.png';
 const charR = new Image; 
 charR.src = 'img/player-r.png';
 
+const charCarry = new Image; 
+charCarry.src = 'img/player-carry.png';
+
+const charCarryR = new Image; 
+charCarryR.src = 'img/player-carry-r.png';
+
 const charShadow = new Image; 
 charShadow.src = 'img/player-shadow.png';
 
@@ -82,42 +88,142 @@ playerRun7R.src = 'img/player-run/player-run-7-r.png';
 const playerRun8R = new Image;
 playerRun8R.src = 'img/player-run/player-run-8-r.png';
 
+const playerCarry1 = new Image; 
+playerCarry1.src = 'img/player-carry/player-carry-1.png';
+
+const playerCarry2 = new Image; 
+playerCarry2.src = 'img/player-carry/player-carry-2.png';
+
+const playerCarry3 = new Image; 
+playerCarry3.src = 'img/player-carry/player-carry-3.png';
+
+const playerCarry4 = new Image; 
+playerCarry4.src = 'img/player-carry/player-carry-4.png';
+
+const playerCarry5 = new Image; 
+playerCarry5.src = 'img/player-carry/player-carry-5.png';
+
+const playerCarry6 = new Image; 
+playerCarry6.src = 'img/player-carry/player-carry-6.png';
+
+const playerCarry7 = new Image; 
+playerCarry7.src = 'img/player-carry/player-carry-7.png';
+
+const playerCarry8 = new Image; 
+playerCarry8.src = 'img/player-carry/player-carry-8.png';
+
+const playerCarry1R = new Image; 
+playerCarry1R.src = 'img/player-carry/player-carry-1-r.png';
+
+const playerCarry2R = new Image; 
+playerCarry2R.src = 'img/player-carry/player-carry-2-r.png';
+
+const playerCarry3R = new Image; 
+playerCarry3R.src = 'img/player-carry/player-carry-3-r.png';
+
+const playerCarry4R = new Image; 
+playerCarry4R.src = 'img/player-carry/player-carry-4-r.png';
+
+const playerCarry5R = new Image; 
+playerCarry5R.src = 'img/player-carry/player-carry-5-r.png';
+
+const playerCarry6R = new Image; 
+playerCarry6R.src = 'img/player-carry/player-carry-6-r.png';
+
+const playerCarry7R = new Image; 
+playerCarry7R.src = 'img/player-carry/player-carry-7-r.png';
+
+const playerCarry8R = new Image; 
+playerCarry8R.src = 'img/player-carry/player-carry-8-r.png';
+
 let hero = {xPos: 376, yPos: 376, width: 48, height: 48};
-let dog = {xPos: 600, yPos: 700, width: 48, height: 48};
-let dog_2 = {xPos: 200, yPos: 100, width: 48, height: 48};
-let tree = {xPos: 50, yPos: 300, width: 64, height: 128};
-let tree_2 = {xPos: 600, yPos: 200, width: 64, height: 128};
-let rock = {xPos: 720, yPos: 450, width: 64, height: 64};
-let rock_2 = {xPos: 30, yPos: 150, width: 64, height: 64};
+let dog1 = {xPos: 100, yPos: 400, width: 48, height: 48};
+let dog2 = {xPos: 650, yPos: 600, width: 48, height: 48};
 let house = {xPos: 352, yPos: 150, width: 96, height: 96};
+
+let hasDog;
 
 const canvas = document.getElementById("gameCanvas");
 const context = canvas.getContext("2d");
 
+let treeHitboxList = [];
+function treeHitbox(x, y, w, h) {
+  list = {xPos: x, yPos: y, width: w, height: h};
+  treeHitboxList.push(list);
+}
+
+let treeList = [];
+function addTree(x, y, w, h){
+  list = {xPos: x, yPos: y, width: w, height: h};
+  treeList.push(list);
+}
+addTree(150, 100, 64, 128);
+addTree(650, 250, 64, 128);
+addTree(450, 600, 64, 128);
+addTree(100, 550, 64, 128);
+addTree(200, 300, 64, 128);
+function drawAllTrees(){
+  for(var i = 0; i < treeList.length; i++){
+    context.drawImage(treeShadow, treeList[i].xPos, treeList[i].yPos, treeList[i].width, treeList[i].height);
+    context.drawImage(treeImg, treeList[i].xPos, treeList[i].yPos, treeList[i].width, treeList[i].height);
+    treeHitbox(treeList[i].xPos + treeList[i].width * (12 / 32), treeList[i].yPos + treeList[i].height * (52 / 64), treeList[i].width * (8 / 32), treeList[i].height * (4 / 64));
+    layer(treeList[i]);
+  }
+}
+
+let rockHitboxList = [];
+function rockHitbox(x, y, w, h) {
+  list = {xPos: x, yPos: y, width: w, height: h};
+  rockHitboxList.push(list);
+}
+
+let rockList = [];
+function addRock(x, y, w, h){
+  list = {xPos: x, yPos: y, width: w, height: h};
+  rockList.push(list);
+}
+addRock(550, 50, 64, 64);
+addRock(50, 300, 64, 64);
+addRock(550, 450, 64, 64);
+addRock(250, 500, 64, 64);
+addRock(500, 300, 64, 64);
+function drawAllRocks(){
+  for(var i = 0; i < rockList.length; i++){
+    context.drawImage(rockShadow, rockList[i].xPos, rockList[i].yPos, rockList[i].width, rockList[i].height);
+    context.drawImage(rockImg, rockList[i].xPos, rockList[i].yPos, rockList[i].width, rockList[i].height);
+    rockHitbox(rockList[i].xPos + rockList[i].width * (2 / 32), rockList[i].yPos + rockList[i].height * (16 / 32), rockList[i].width * (28 / 32), rockList[i].height * (16 / 32));
+    layer(rockList[i]);
+  }
+}
+
 let charArray = [playerRun1, playerRun1, playerRun2, playerRun2, playerRun3, playerRun3, playerRun4, playerRun4, playerRun5, playerRun5, playerRun6, playerRun6, playerRun7, playerRun7, playerRun8, playerRun8];
 let charArrayR = [playerRun1R, playerRun1R, playerRun2R, playerRun2R, playerRun3R, playerRun3R, playerRun4R, playerRun4R, playerRun5R, playerRun5R, playerRun6R, playerRun6R, playerRun7R, playerRun7R, playerRun8R, playerRun8R];
+let charCarryArray = [playerCarry1, playerCarry1, playerCarry2, playerCarry2, playerCarry3, playerCarry3, playerCarry4, playerCarry4, playerCarry5, playerCarry5, playerCarry6, playerCarry6, playerCarry7, playerCarry7, playerCarry8, playerCarry8];
+let charCarryArrayR = [playerCarry1R, playerCarry1R, playerCarry2R, playerCarry2R, playerCarry3R, playerCarry3R, playerCarry4R, playerCarry4R, playerCarry5R, playerCarry5R, playerCarry6R, playerCarry6R, playerCarry7R, playerCarry7R, playerCarry8R, playerCarry8R];
 
 function changeImage(){
   context.clearRect(0,0, context.canvas.width, context.canvas.height);
   context.drawImage(background, 0, 0, 800, 800);
   context.drawImage(houseShadow, house.xPos, house.yPos, house.width, house.height);
-  context.drawImage(treeShadow, tree.xPos, tree.yPos, tree.width, tree.height);
-  context.drawImage(treeShadow, tree_2.xPos, tree_2.yPos, tree_2.width, tree_2.height);
-  context.drawImage(rockShadow, rock.xPos, rock.yPos, rock.width, rock.height);
-  context.drawImage(rockShadow, rock_2.xPos, rock_2.yPos, rock_2.width, rock_2.height);
-  context.drawImage(dogShadow, dog.xPos, dog.yPos, dog.width, dog.height);
-  context.drawImage(dogShadow, dog_2.xPos, dog_2.yPos, dog_2.width, dog_2.height);
+  context.drawImage(dogShadow, dog1.xPos, dog1.yPos, dog1.width, dog1.height);
+  context.drawImage(dogShadow, dog2.xPos, dog2.yPos, dog2.width, dog2.height);
   context.drawImage(charShadow, hero.xPos, hero.yPos, hero.width, hero.height);
+  drawAllTrees();
+  drawAllRocks();
   context.drawImage(houseImg, house.xPos, house.yPos, house.width, house.height);
-  context.drawImage(treeImg, tree.xPos, tree.yPos, tree.width, tree.height);
-  context.drawImage(treeImg, tree_2.xPos, tree_2.yPos, tree_2.width, tree_2.height);
-  context.drawImage(rockImg, rock.xPos, rock.yPos, rock.width, rock.height);
-  context.drawImage(rockImg, rock_2.xPos, rock_2.yPos, rock_2.width, rock_2.height);
-  context.drawImage(dogImg, dog.xPos, dog.yPos, dog.width, dog.height);
-  context.drawImage(dogImg, dog_2.xPos, dog_2.yPos, dog_2.width, dog_2.height);
+  context.drawImage(dogImg, dog1.xPos, dog1.yPos, dog1.width, dog1.height);
+  context.drawImage(dogImg, dog2.xPos, dog2.yPos, dog2.width, dog2.height);
   hitbox();
+  fight();
+  returnDog();
   if ((keyDownA || keyDownD || keyDownS || keyDownW) && !(keyDownA === keyDownD && keyDownS === keyDownW)) {
-    if (reverse) {
+    if (reverse && hasDog) {
+      context.drawImage(charCarryArrayR[i], hero.xPos, hero.yPos, hero.width, hero.height);
+    }
+    else if (hasDog) {
+      context.drawImage(charCarryArray[i], hero.xPos, hero.yPos, hero.width, hero.height);
+    }
+    else if (reverse) {
       context.drawImage(charArrayR[i], hero.xPos, hero.yPos, hero.width, hero.height);
     }
     else {
@@ -125,7 +231,13 @@ function changeImage(){
     }
   }
   else {
-    if (reverse) {
+    if (reverse && hasDog) {
+      context.drawImage(charCarryR, hero.xPos, hero.yPos, hero.width, hero.height);
+    }
+    else if (hasDog) {
+      context.drawImage(charCarry, hero.xPos, hero.yPos, hero.width, hero.height);
+    }
+    else if (reverse) {
       context.drawImage(charR, hero.xPos, hero.yPos, hero.width, hero.height);
     }
     else {
@@ -161,3 +273,21 @@ function render(time){
   requestAnimationFrame(render);
 }
 requestAnimationFrame(render);
+
+function fight() {
+  if (entityCollision(heroHitbox) && !hasDog) {
+    if (collision(dog1Hitbox, heroHitbox)) {
+      dog1 = {xPos: -100, yPos: -100, width: 48, height: 48};
+    }
+    if (collision(dog2Hitbox, heroHitbox)) {
+      dog2 = {xPos: -100, yPos: -100, width: 48, height: 48};
+    }
+    loadFightScene();
+  }
+}
+
+function returnDog() {
+  if (collision(returnDogHitbox, heroHitbox) && hasDog) {
+    hasDog = false;
+  }
+}
