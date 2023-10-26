@@ -1,3 +1,7 @@
+function startGame(){
+  canvas.style = "display:block";
+}
+
 const char = new Image; 
 char.src = 'img/player.png';
 
