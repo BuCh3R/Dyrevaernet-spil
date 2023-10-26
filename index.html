@@ -11,46 +11,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="gameDiv">
-        <canvas id="gameCanvas" width="800" height="800"></canvas>
-        <canvas id="fightCanvas" width="800" height="800"></canvas>
-    </div>
-
-    <div class="overlay-container">
-        <div class="info">
-            <h2>Sådan spiller du</h2>
-            <p>Det gælder om at redde så mange hunde som muligt. Fang hundene og få dem ind i huset.</p>
+    <header>
+        <div class="top-menu">
+            <div class="item-container top-items">
+                <a href="">Dyreklinik</a>
+                <a href="">Info om Dyreværnet</a>
+                <a href="">Hittedyr</a>
+                <a href="">Hundepension</a>
+                <a href="">Andmeld dyreværnsag</a>
+                <a href="">Bliv medlem</a>
+            </div>
+        </div>
+        <div class="second-top-menu">
+            <div class="item-container">
+                <img src="img/dyrevaernet-logo.png" alt="dyrevaernet-logo">
+                <a href="">TV</a>
+                <a href="">Frynseklinikken</a>
+                <a href="">Adopter</a>
+                <a href="">Dyreværnets ABC</a>
+                <a href="">Indlever</a>
+            </div>
+        </div>
+    </header>
+    <div class="menu-container">
+        <div class="menu">
+            <h2>DYREVÆRNETS SPIL</h2>
+            <button onclick="startGame()">START</button>
+            <button onclick="getInfo()">INFO</button>
+            <div id="gameDiv">
+                <canvas id="gameCanvas" width="800" height="800"></canvas>
+                <canvas id="fightCanvas" width="800" height="800"></canvas>
+            </div>
+            <!-- <p>Det gælder om at redde så mange hunde som muligt. Fang hundene og få dem ind i huset.</p>
             <br>
             <p>Du styrer med piletasterne</p>
             <br>   
-            <p>Undgå forhindringerne, da de vil sænke dig.</p>
-
-
+            <p>Undgå forhindringerne, da de vil sænke dig.</p> -->
         </div>
-
         <div class="game_over">
-            <h2>GAME OVER</h2>
+            <!-- <h2>GAME OVER</h2>
             <p>Du har gennemført Dyreværnets spil
 
                 Dyreværnet gennemfører årligt X antal dyreaktioner i hele Danmark. Du nåede X antal
                 
                 Klik ind på dyrværnets hjemmeside og støt os
-            </p>
-            
-
+            </p> -->
         </div>
-        
-
-
     </div>
-
-
-
-
-
-
-
-
 
 </body>
 </html>

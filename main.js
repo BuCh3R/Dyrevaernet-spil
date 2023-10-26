@@ -1,3 +1,7 @@
+function startGame(){
+  canvas.style = "display:block";
+}
+
 const char = new Image; 
 char.src = 'img/player.png';
 
@@ -81,6 +85,7 @@ playerRun7R.src = 'img/player-run/player-run-7-r.png';
 
 const playerRun8R = new Image;
 playerRun8R.src = 'img/player-run/player-run-8-r.png';
+
 
 let hero = {xPos: 376, yPos: 376, width: 48, height: 48};
 let dog = {xPos: 600, yPos: 700, width: 48, height: 48};
