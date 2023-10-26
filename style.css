@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto+Condensed:wght@400;700&family=Sometype+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto+Condensed:wght@400;500;600;700;800;900&family=Sometype+Mono&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -9,7 +9,7 @@ body{
 canvas{
     border: 1px solid black;
     position: absolute;
-    top: 50%;
+    top: 20px;
     left: 50%;
     transform: translate(-50%, 0%);
 }
@@ -54,8 +54,25 @@ h2{
     background-color: #111;
     padding: 0px 40px;
     border: 8px outset #444;
+    width: 400px;
+    margin-top: 40px;
 }
 .menu button:hover{
+    color: #fff;
+    cursor: pointer;
+    transition: 0.25s;
+}
+.goBackBtn{
+    font-family: var(--pixelfont);
+    font-size: 80px;
+    color: rgb(213, 229, 240);
+    background-color: #111;
+    padding: 0px 40px;
+    border: 8px outset #444;
+    width: 400px;
+    margin-top: 40px;
+}
+.goBackBtn:hover{
     color: #fff;
     cursor: pointer;
     transition: 0.25s;
@@ -73,6 +90,9 @@ h2{
     line-height: 27px;
     z-index: 2;
 }
+.top-items{
+    margin-right: 3px !important;
+}
 .top-items a{
     text-decoration: none;
     color: #fff;
@@ -84,8 +104,9 @@ h2{
     text-decoration: underline;
 }
 .item-container{
-    width: 50%;
+    width: 51%;
     text-align: right;
+
 }
 .second-top-menu{
     display: flex;
@@ -99,7 +120,7 @@ h2{
     line-height: 85px;
     border-bottom: solid 3px #000;
 }
-.second-top-menu img{
+.logo{
     position: relative;
     top: 5px;
     width: 75px;
@@ -120,4 +141,135 @@ h2{
 }
 .second-top-menu a:hover{
     text-decoration: underline;
+}
+.menu-items{
+    position: relative;
+    left: 20px;
+}
+.stotdyrBtn{
+    background-color: #279dca;
+    border-color: #298fb6;
+    height: 32px;
+    line-height: 32px;
+    border-bottom: solid 2px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    border-radius: 4px;
+    min-width: 75px;
+    padding: 0 40px 0 10px;
+    cursor: pointer;
+    margin: 0;
+    border: 0;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    box-sizing: border-box;
+    text-rendering: auto;
+    word-spacing: thin;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+.stotdyrBtn:hover{
+    opacity: 0.7;
+}
+.arrow{
+    position: relative;
+    top: 0px;
+    right: 28px;
+    width: 16px;
+}
+.movement-container{
+    color: #fff;
+}
+.info-container p{
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+.movement-style{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    letter-spacing: 2px;
+}
+.info-container{
+    display: none;
+    position: absolute;
+    left: 20%;
+    width: 60%;
+}
+.movement-container{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.movement-container p{
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.slash1{
+    position: relative;
+    left: 45px;
+    margin-left: -10px !important;
+}
+.slash2{
+    position: relative;
+    left: 30px;
+    padding-left: 8px;
+}
+.slash3{
+    position: relative;
+    left: 4px;
+    padding-left: 31px;
+}
+.slash4{
+    position: relative;
+    left: 35px;
+}
+.arrowUp{
+    position: relative;
+    left: 90px;
+}
+.arrowDown{
+    position: relative;
+    left: 77px;
+}
+.arrowLeft{
+    position: relative;
+    left: 37px;
+}
+.arrowRight{
+    position: relative;
+    left: 70px;
+}
+.game_over{
+    display: none;
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    color: #fff;
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+#gameOverBtn{
+    display: block;
 }

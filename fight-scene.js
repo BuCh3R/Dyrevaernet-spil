@@ -1,5 +1,4 @@
-let dogHitbox = hero.xPos>=dog.xPos && hero.xPos<=dog.xPos && hero.yPos>=dog.yPos && hero.yPos<=dog.yPos;
-
+// let dogHitbox = hero.xPos>=dog.xPos && hero.xPos<=dog.xPos && hero.yPos>=dog.yPos && hero.yPos<=dog.yPos;
 const grassBackground = new Image;
 grassBackground.src = "img/fight/grass-fight.png";
 

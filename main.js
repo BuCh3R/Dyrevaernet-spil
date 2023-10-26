@@ -1,7 +1,25 @@
 function startGame(){
+  document.getElementById("menuId").style = "display:none";
   canvas.style = "display:block";
 }
 
+function viewInfo(){
+  document.getElementById("menuId").style = "display:none";
+  document.getElementById("infodiv").style = "display:block";
+}
+
+function showMenu(){
+  canvas.style = "display:none";
+  document.getElementById("infodiv").style = "display:none";
+  document.getElementById("menuId").style = "display:block";
+}
+let gameOver = false;
+function gameOverBtn(){
+  document.getElementById("gameOver").style = "display:none";
+  document.getElementById("menuId").style = "display:block";
+  canvas.style = "display:none";
+  gameOver = true;
+}
 const char = new Image; 
 char.src = 'img/player.png';
 
@@ -37,6 +55,9 @@ houseShadow.src = 'img/house-shadow.png';
 
 const background = new Image;
 background.src = 'img/background.png';
+
+// const grassBackground = new Image;
+// grassBackground.src = "img/fight/grass-fight.png";
 
 const playerRun1 = new Image;
 playerRun1.src = 'img/player-run/player-run-1.png';
@@ -153,6 +174,11 @@ let counter = 0;
 function render(time){
   if(time - lastRender<16){
     requestAnimationFrame(render);
+    if(hero.xPos>=500){
+      if(!gameOver){
+        document.getElementById("gameOver").style = "display:block";
+      }
+    }
     return;
   }
   lastRender = time;
@@ -166,3 +192,4 @@ function render(time){
   requestAnimationFrame(render);
 }
 requestAnimationFrame(render);
+

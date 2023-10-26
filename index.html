@@ -5,57 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="collision.js" defer></script>
-    <script src="main.js" defer></script>
     <script src="movement.js" defer></script>
     <script src="fight-scene.js" defer></script>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="top-menu">
             <div class="item-container top-items">
-                <a href="">Dyreklinik</a>
-                <a href="">Info om Dyreværnet</a>
-                <a href="">Hittedyr</a>
-                <a href="">Hundepension</a>
-                <a href="">Andmeld dyreværnsag</a>
-                <a href="">Bliv medlem</a>
+                <a href="#">Dyreklinik</a>
+                <a href="#">Info om Dyreværnet</a>
+                <a href="#">Hittedyr</a>
+                <a href="#">Hundepension</a>
+                <a href="#">Anmeld dyreværnssag</a>
+                <a href="#">Bliv medlem</a>
             </div>
         </div>
         <div class="second-top-menu">
-            <div class="item-container">
-                <img src="img/dyrevaernet-logo.png" alt="dyrevaernet-logo">
-                <a href="">TV</a>
-                <a href="">Frynseklinikken</a>
-                <a href="">Adopter</a>
-                <a href="">Dyreværnets ABC</a>
-                <a href="">Indlever</a>
+            <div class="item-container menu-items">
+                <img class="logo" src="img/dyrevaernet-logo.png" alt="dyrevaernet-logo">
+                <a href="#">TV</a>
+                <a href="#">Frynseklinikken</a>
+                <a href="#">Adopter</a>
+                <a href="#">Dyreværnets ABC</a>
+                <a href="#">Indlever</a>
+                <button class="stotdyrBtn">Støt dyrene ❤️</button>
+                <img class="arrow" src="img/right-arrow.png" alt="white-right-arrow">
             </div>
         </div>
     </header>
     <div class="menu-container">
-        <div class="menu">
-            <h2>DYREVÆRNETS SPIL</h2>
-            <button onclick="startGame()">START</button>
-            <button onclick="getInfo()">INFO</button>
-            <div id="gameDiv">
-                <canvas id="gameCanvas" width="800" height="800"></canvas>
-                <canvas id="fightCanvas" width="800" height="800"></canvas>
-            </div>
-            <!-- <p>Det gælder om at redde så mange hunde som muligt. Fang hundene og få dem ind i huset.</p>
-            <br>
-            <p>Du styrer med piletasterne</p>
-            <br>   
-            <p>Undgå forhindringerne, da de vil sænke dig.</p> -->
+        <div id="gameDiv">
+            <canvas id="gameCanvas" width="800" height="800"></canvas>
+            <canvas id="fightCanvas" width="800" height="800"></canvas>
         </div>
-        <div class="game_over">
-            <!-- <h2>GAME OVER</h2>
-            <p>Du har gennemført Dyreværnets spil
-
-                Dyreværnet gennemfører årligt X antal dyreaktioner i hele Danmark. Du nåede X antal
-                
-                Klik ind på dyrværnets hjemmeside og støt os
-            </p> -->
+        <div id="menuId" class="menu">
+            <h2>DYREVÆRNETS SPIL</h2>
+            <button id="startBtn" onclick="startGame()">START</button>
+            <br>
+            <button id="infoBtn" onclick="viewInfo()">INFO</button>
+        </div>
+        <div id="infodiv" class="info-container">
+            <h2>DYREVÆRNETS SPIL</h2>
+            <div>
+                <p>Det gælder om at redde hunde ved brug af forskellige tricks.</p>
+                <p>Når det er lykkedes dig at få hundens tillid, kan du tage den med tilbage til huset.</p>
+                <p>Du styrer med W + A + S + D eller med piletasterne og ved at klikke på dine tricks med musen</p>
+            </div>
+            <div class="movement-container">
+                <p class="movement-style">Op: W <span class="slash1">/</span><span class="arrowUp">&#8593;</span></p>
+                <p class="movement-style">Ned: S <span class="slash2">/</span><span class="arrowDown">&#8595;</span></p>
+                <p class="movement-style">Venster: A <span class="slash3">/</span> <span class="arrowLeft">&#8592;</span></p>
+                <p class="movement-style">Højre: D <span class="slash4">/</span> <span class="arrowRight">&#8594;</span> </p>
+            </div>
+            <button id="menuBtn" class="goBackBtn" onclick="showMenu()">Menu</button>
+        </div>
+        <div id="gameOver" class="game_over">
+            <h2>GAME OVER!</h2>
+            <p>Du har gennemført Dyreværnets spil</p>
+            <p>Dyreværnet gennemfører årligt X antal dyreaktioner i hele Danmark.</p>
+            <p>du hjalp 2 hunde!</p>
+            <p>Klik ind på dyrværnets hjemmeside og støt os</p>
+            <button id="game-Over-Btn" class="goBackBtn" onclick="gameOverBtn();">Menu</button>
         </div>
     </div>
 
