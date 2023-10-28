@@ -281,11 +281,12 @@ function changeImage(){
 
 let lastRender = 0;
 let counter = 0;
+let dogCounter = 0;
 
 function render(time){
   if(time - lastRender<16){
     requestAnimationFrame(render);
-    if(hero.xPos>=500){
+    if(dogCounter >= 2){
       if(!gameOver){
         document.getElementById("gameOver").style = "display:block";
       }
@@ -319,5 +320,6 @@ function fight() {
 function returnDog() {
   if (collision(returnDogHitbox, heroHitbox) && hasDog) {
     hasDog = false;
+    dogCounter++;
   }
 }
