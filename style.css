@@ -30,7 +30,7 @@ canvas{
 #fightCanvas{
     display: none;
 }
-h1{
+h2{
     font-family: var(--pixelfont);
     font-size: 100px;
     color: #fff;
