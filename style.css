@@ -5,6 +5,7 @@
 }
 body{
     background-image: url("img/sky.jpg");
+    background-size: cover;
 }
 canvas{
     border: 1px solid black;
@@ -29,7 +30,7 @@ canvas{
 #fightCanvas{
     display: none;
 }
-h2{
+h1{
     font-family: var(--pixelfont);
     font-size: 100px;
     color: #fff;
@@ -76,6 +77,14 @@ h2{
     color: #fff;
     cursor: pointer;
     transition: 0.25s;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
 }
 .top-menu{
     display: flex;
@@ -166,7 +175,6 @@ h2{
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     box-sizing: border-box;
     text-rendering: auto;
-    word-spacing: thin;
     text-indent: 0px;
     text-shadow: none;
     display: inline-block;

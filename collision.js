@@ -71,8 +71,8 @@ function objectCollision(element) {
     }
 }
 
-function anyCollision(element) {
-    if (collision(tree, element) || collision(tree_2, element) || collision(rock, element) || collision(rock_2, element) || collision(house, element)) {
-        return true;
-    }
-}
+// function anyCollision(element) {
+//     if (collision(tree, element) || collision(tree_2, element) || collision(rock, element) || collision(rock_2, element) || collision(house, element)) {
+//         return true;
+//     }
+// }

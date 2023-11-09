@@ -62,9 +62,6 @@ houseShadow.src = 'img/house-shadow.png';
 const background = new Image;
 background.src = 'img/background.png';
 
-// const grassBackground = new Image;
-// grassBackground.src = "img/fight/grass-fight.png";
-
 const playerRun1 = new Image;
 playerRun1.src = 'img/player-run/player-run-1.png';
 

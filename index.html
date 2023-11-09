@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,36 +12,36 @@
 </head>
 <body>
     <header>
-        <div class="top-menu">
-            <div class="item-container top-items">
-                <a href="#">Dyreklinik</a>
-                <a href="#">Info om Dyreværnet</a>
-                <a href="#">Hittedyr</a>
-                <a href="#">Hundepension</a>
-                <a href="#">Anmeld dyreværnssag</a>
-                <a href="#">Bliv medlem</a>
-            </div>
-        </div>
-        <div class="second-top-menu">
-            <div class="item-container menu-items">
-                <img class="logo" src="img/dyrevaernet-logo.png" alt="dyrevaernet-logo">
-                <a href="#">TV</a>
-                <a href="#">Frynseklinikken</a>
-                <a href="#">Adopter</a>
-                <a href="#">Dyreværnets ABC</a>
-                <a href="#">Indlever</a>
-                <button class="stotdyrBtn">Støt dyrene ❤️</button>
-                <img class="arrow" src="img/right-arrow.png" alt="white-right-arrow">
-            </div>
-        </div>
+        <nav class="top-menu">
+            <ul class="item-container top-items">
+                <li><a href="#">Dyreklinik</a></li>
+                <li><a href="#">Info om Dyreværnet</a></li>
+                <li><a href="#">Hittedyr</a></li>
+                <li><a href="#">Hundepension</a></li>
+                <li><a href="#">Anmeld dyreværnssag</a></li>
+                <li><a href="#">Bliv medlem</a></li>
+            </ul>
+        </nav>
+        <nav class="second-top-menu">
+            <ul class="item-container menu-items">
+                <li><img class="logo" src="img/dyrevaernet-logo.png" alt="dyrevaernet-logo"></li>
+                <li><a href="#">TV</a></li>
+                <li><a href="#">Frynseklinikken</a></li>
+                <li><a href="#">Adopter</a></li>
+                <li><a href="#">Dyreværnets ABC</a></li>
+                <li><a href="#">Indlever</a></li>
+                <li><button class="stotdyrBtn">Støt dyrene ❤️</button></li>
+                <li><img class="arrow" src="img/right-arrow.png" alt="white-right-arrow"></li>
+            </ul>
+        </nav>
     </header>
-    <div class="menu-container">
+    <main class="menu-container">
         <div id="gameDiv">
             <canvas id="gameCanvas" width="800" height="800"></canvas>
             <canvas id="fightCanvas" width="800" height="800"></canvas>
         </div>
         <div id="menuId" class="menu">
-            <h2>DYREVÆRNETS SPIL</h2>
+            <h1>DYREVÆRNETS SPIL</h1>
             <button id="startBtn" onclick="startGame()">START</button>
             <br>
             <button id="infoBtn" onclick="viewInfo()">INFO</button>
@@ -69,7 +69,6 @@
             <p>Klik ind på dyrværnets hjemmeside og støt os</p>
             <button id="game-Over-Btn" class="goBackBtn" onclick="gameOverBtn();">Menu</button>
         </div>
-    </div>
-
+    </main>
 </body>
 </html>
